@@ -8,11 +8,11 @@ def AllEnemyPage(reguest):
     return render(reguest, "allEnemies.html", pageParams)
 
 
-def EnemyPage(request):
+def EnemyPage(request, name):
     allEnemies = Enemy.objects.all()
+    print(name)
+    currentEnemy = Enemy.objects.all().filter(name=name)
 
-    print(allEnemies)
-
-    params = {"speed":12, "health":100, "damage":34}
+    params = {"enemy": currentEnemy[0]}
     return render(request, "enemy.html", params)
 

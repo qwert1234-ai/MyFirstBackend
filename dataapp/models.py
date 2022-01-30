@@ -5,3 +5,4 @@ class Enemy(models.Model):
     damage = models.IntegerField()
     speed = models.IntegerField()
     health = models.IntegerField()
+    avatar =models.ImageField(blank=True)
